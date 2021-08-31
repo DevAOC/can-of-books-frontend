@@ -43,7 +43,7 @@ export default class App extends React.Component {
           <LoginModal onLogin={this.loginHandler} modal={this.showLoginModal} show={this.state.showModal} />
           <Switch>
             <Route exact path="/books">
-              <BestBooks />
+              <BestBooks user={this.state.user} />
             </Route>
             {this.state.user ? (
               <>

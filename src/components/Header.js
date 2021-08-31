@@ -13,6 +13,11 @@ class Header extends React.Component {
             Home
           </Link>
         </NavItem>
+        <NavItem>
+          <Link to="/books" className="nav-link">
+            View Books
+          </Link>
+        </NavItem>
         {!this.props.user ? (
           <>
             <NavItem>
@@ -31,8 +36,6 @@ class Header extends React.Component {
             </NavItem>
           </>
         )}
-        {/* TODO: if the user is logged in, render a navigation link to profile page */}
-        {/* TODO: if the user is logged in, render the `LogoutButton` */}
       </Navbar>
     );
   }
