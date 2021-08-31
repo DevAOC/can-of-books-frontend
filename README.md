@@ -1,7 +1,7 @@
 # Can of Books Frontend
 
 **Author**: Alexander Beers, Anotoine Charette, Ryan Emmans
-**Version**: 1.3.2
+**Version**: 1.4.0
 
 ## Overview
 
@@ -20,6 +20,7 @@ React, Axios
 08-30-2021 6:00pm - Add rendering of books retrieved from the backend in a carousel.
 08-30-2021 9:00pm - Create login modal and form. Create a profile component that takes data from a login attempt.
 08-31-2021 2:44pm - Create Book Post modal and form. Send posted books to backend and along with information on user who posted book.
+08-31-2021 4:30pm - Added the ability to have users delete a book from their collection.
 
 ## Estimates
 

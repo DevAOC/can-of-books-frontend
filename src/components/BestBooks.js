@@ -27,7 +27,7 @@ export default class BestBooks extends React.Component {
 
   deleteBook = async (id) => {
     try {
-      await axios.delete(`${process.env.REACT_APP_BACKEND_URL}/books?id=${id}`);
+      await axios.delete(`${process.env.REACT_APP_BACKEND_URL}/books/${id}`);
       const books = this.state.books.filter((book) => book._id !== id);
       this.setState({ books });
     } catch (err) {
