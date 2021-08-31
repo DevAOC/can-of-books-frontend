@@ -13,21 +13,30 @@ Books are life-changing. They have the power to enlighten, educate, entertain, h
 React, Axios
 
 ## Change Log
-<!-- Use this area to document the iterative changes made to your application as each feature is successfully implemented. Use time stamps. Here's an example:
-
-01-01-2001 4:59pm - Application now has a fully-functional express server, with a GET route for the location resource. -->
+08-30-2021 6:00pm - Add rendering of books retrieved from the backend in a carousel.
+08-30-2021 9:00pm - Create login modal and form. Create a profile component that takes data from a login attempt.
 
 ## Estimates
 
-Name of feature: Storage - Book Component
+Name of feature: Display all Book to user
 
-Estimate of time needed to complete: 1hr
+Estimate of time needed to complete: 2hr
 
-Start time: _____
+Start time: 3:00
 
-Finish time: _____
+Finish time: 6:00
 
-Actual time needed to complete: _____
+Actual time needed to complete: 3hr
+
+Name of feature: Allow user to login in with credentials and siplay it on a profile page and add routing(partially implemented)
+
+Estimate of time needed to complete: 2hr
+
+Start time: 6:00
+
+Finish time: 9:00
+
+Actual time needed to complete: 3hr
 
 ## Credit and Collaborations
 
