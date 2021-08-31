@@ -1,6 +1,7 @@
 import React from 'react';
 
 import BookCarousel from './BookCarousel';
+import BookList from './BookList';
 import BookFormModal from './BookFormModal';
 import Button from 'react-bootstrap/Button';
 
@@ -11,15 +12,25 @@ export default class BestBooks extends React.Component {
     super(props);
     this.state = {
       books: [],
-      showModal: false
+      showModal: false,
     };
   }
 
   postBook = async (newBook) => {
     try {
       const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/books`, newBook);
-      this.setState({books: [...this.state.books, response.data]});
-    } catch(err) {
+      this.setState({ books: [...this.state.books, response.data] });
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  deleteBook = async (id) => {
+    try {
+      await axios.delete(`${process.env.REACT_APP_BACKEND_URL}/books?id=${id}`);
+      const books = this.state.books.filter((book) => book._id !== id);
+      this.setState({ books });
+    } catch (err) {
       console.error(err);
     }
   };
@@ -33,7 +44,6 @@ export default class BestBooks extends React.Component {
       showModal: this.state.showModal ? false : true,
     });
   };
-
 
   fetchBooks = async () => {
     try {
@@ -51,9 +61,21 @@ export default class BestBooks extends React.Component {
 
     return (
       <>
-        {this.state.books.length ? <BookCarousel books={this.state.books} /> : <h3>No Books Found :(</h3>}
+        {this.state.books.length ? (
+          <>
+            <BookCarousel books={this.state.books} />
+            <BookList books={this.state.books} delete={this.deleteBook} />
+          </>
+        ) : (
+          <h3>No Books Found :(</h3>
+        )}
         <Button onClick={this.showBookModal}>Add a book</Button>
-        <BookFormModal user={this.props.user} handleSubmit={this.postBook} modal={this.showBookModal} show={this.state.showModal} />
+        <BookFormModal
+          user={this.props.user}
+          handleSubmit={this.postBook}
+          modal={this.showBookModal}
+          show={this.state.showModal}
+        />
       </>
     );
   }
