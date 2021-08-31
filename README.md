@@ -1,7 +1,7 @@
 # Can of Books Frontend
 
 **Author**: Alexander Beers, Anotoine Charette, Ryan Emmans
-**Version**: 1.0.0
+**Version**: 1.3.1
 
 ## Overview
 Books are life-changing. They have the power to enlighten, educate, entertain, heal, and help us grow. This app is used to track what books have impacted the user, and what's recommended to read next.
@@ -15,6 +15,7 @@ React, Axios
 ## Change Log
 08-30-2021 6:00pm - Add rendering of books retrieved from the backend in a carousel.
 08-30-2021 9:00pm - Create login modal and form. Create a profile component that takes data from a login attempt.
+08-31-2021 2:44pm - Create Book Post modal and form. Send posted books to backend and along with information on user who posted book.
 
 ## Estimates
 
@@ -29,6 +30,26 @@ Finish time: 6:00
 Actual time needed to complete: 3hr
 
 Name of feature: Allow user to login in with credentials and siplay it on a profile page and add routing(partially implemented)
+
+Estimate of time needed to complete: 2hr
+
+Start time: 6:00
+
+Finish time: 9:00
+
+Actual time needed to complete: 3hr
+
+Name of feature: Allow user to login in with credentials and siplay it on a profile page and add routing(partially implemented)
+
+Estimate of time needed to complete: 2hr
+
+Start time: 6:00
+
+Finish time: 9:00
+
+Actual time needed to complete: 3hr
+
+Name of feature: Allow user to posts new books to the server, and render the results
 
 Estimate of time needed to complete: 2hr
 
@@ -57,6 +78,26 @@ Actual time needed to complete: 3hr
 * What is your plan if you start to fall behind?
 
   Prioritize features and precede as needed
+
+### *Cooperative*
+
+* Make a list of each parson’s strengths.
+  Antoine: Logical thinking
+  Ryan: 'Visual guy', frontend design
+  Alex: Problem solving, backend design
+
+* How can you best utilize these strengths in the development of your application?
+
+  Each person can take the lead in tasks that involve the strengths listed above
+
+* In what areas do you each want to develop greater strength?
+  Antoine: Frontend design, styling (UI, layout, etc)
+  Ryan: backend-development 
+  Alex: Frontend design, styling (UI, layout, etc)
+
+* Knowing that every person in your team needs to understand the code, how do you plan to approach the day-to-day development?
+
+  Meetings will be held at the beginning of each coding session to discuss that sessions tasks and priorities. Code reviews and educational disccusions will also be held. 
 
 ### *Conflict Resolution*
 

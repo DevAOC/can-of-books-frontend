@@ -16,7 +16,7 @@ export default class LoginModal extends Component {
         </Modal.Header>
         <Modal.Body>
           <Form onSubmit={this.handleSubmit}>
-            <FloatingLabel controlId="floatingPassword" label="Username">
+            <FloatingLabel controlId="floatingInput" label="Username">
               <Form.Control type="text" placeholder="Text" name="username" required />
             </FloatingLabel>
             <FloatingLabel controlId="floatingInput" label="Email address" className="mb-3">
