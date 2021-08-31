@@ -1,11 +1,10 @@
 import React from 'react';
-import Carousel from 'react-bootstrap/Carousel';
 
 import BookCarousel from './bookCarousel';
 
 import axios from 'axios';
 
-class BestBooks extends React.Component {
+export default class BestBooks extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -14,27 +13,23 @@ class BestBooks extends React.Component {
   }
 
   componentDidMount() {
+    this.fetchBooks();
+  }
+
+  fetchBooks = async () => {
     try {
-      const books = await axios.get(`${REACT_APP_BACKEND_URL}/books`);
+      const books = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/books`);
       this.setState({
-        books: books,
+        books: books.data,
       });
     } catch (err) {
-      console.log(err.response);
+      console.log(err);
     }
-  }
+  };
 
   render() {
     /* TODO: render user's books in a Carousel */
 
-    return (
-      <>
-        <h2>My Essential Lifelong Learning &amp; Formation Shelf</h2>
-
-        {this.state.books.length > 0 ? <BookCarousel books={this.state.books} /> : <h3>No Books Found :(</h3>}
-      </>
-    );
+    return <>{this.state.books.length ? <BookCarousel books={this.state.books} /> : <h3>No Books Found :(</h3>}</>;
   }
 }
-
-export default BestBooks;
