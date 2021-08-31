@@ -2,9 +2,10 @@ import { Component } from 'react';
 import { Modal, Button, Form, FloatingLabel } from 'react-bootstrap';
 
 export default class LoginModal extends Component {
-  userCheck = (event) => {
+  handleSubmit = (event) => {
     event.preventDefault();
-    console.log(event.target.value);
+    this.props.modal();
+    this.props.onLogin(event);
   };
 
   render() {
@@ -14,20 +15,16 @@ export default class LoginModal extends Component {
           <Modal.Title id="contained-modal-title-vcenter">Log in</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Form>
+          <Form onSubmit={this.handleSubmit}>
+            <FloatingLabel controlId="floatingPassword" label="Username">
+              <Form.Control type="text" placeholder="Text" name="username" required />
+            </FloatingLabel>
             <FloatingLabel controlId="floatingInput" label="Email address" className="mb-3">
-              <Form.Control type="email" placeholder="name@example.com" />
+              <Form.Control type="email" placeholder="name@example.com" name="email" required />
             </FloatingLabel>
-            <FloatingLabel controlId="floatingPassword" label="Password">
-              <Form.Control type="text" placeholder="Text" />
-            </FloatingLabel>
+            <Button type="submit">Log in</Button>
           </Form>
         </Modal.Body>
-        <Modal.Footer>
-          <Button onClick={this.userCheck} type="submit">
-            Log in
-          </Button>
-        </Modal.Footer>
       </Modal>
     );
   }

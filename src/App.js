@@ -19,7 +19,7 @@ export default class App extends React.Component {
 
   loginHandler = (user) => {
     this.setState({
-      user: { name: 'Antoine', email: 'bih@email.com' },
+      user: { name: user.target.username.value, email: user.target.email.value },
     });
   };
 
