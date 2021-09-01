@@ -21,6 +21,7 @@ React, Axios
 08-30-2021 9:00pm - Create login modal and form. Create a profile component that takes data from a login attempt.
 08-31-2021 2:44pm - Create Book Post modal and form. Send posted books to backend and along with information on user who posted book.
 08-31-2021 4:30pm - Added the ability to have users delete a book from their collection.
+09-01-2021 4:00pm - Added a modal for the user to update or modify an existing book.
 
 ## Estimates
 
@@ -73,6 +74,16 @@ Start time: 3:00 pm PST
 Finish time: 3:45 pm PST
 
 Actual time needed to complete: 45 mins
+
+Name of feature: Allows user to update books from the book array/list
+
+Estimate of time needed to complete: 2hrs
+
+Start time: 1:30 pm PST
+
+Finish time: 4:00 pm PST
+
+Actual time needed to complete: 2.5hrs
 
 ## Credit and Collaborations
 
