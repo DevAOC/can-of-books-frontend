@@ -10,7 +10,7 @@ export default class UpdateBookModal extends Component {
       description: e.target.description.value,
       status: e.target.read.checked,
       email: this.props.user.email,
-      _id: this.props.user._id
+      _id: this.props.selected._id
     }
     this.props.update(book);
     this.props.closeModal();

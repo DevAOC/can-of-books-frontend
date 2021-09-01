@@ -39,6 +39,12 @@ export default class BestBooks extends React.Component {
 
   updateBook = async (bookObject) => {
     console.log(bookObject);
+    try {
+      const result = await axios.put(`${process.env.REACT_APP_BACKEND_URL}/books/${bookObject._id}`, bookObject);
+      console.log(result);
+    } catch (err) {
+      console.error(err);
+    }
   }
 
   handleUpdateModal = (id) => {
