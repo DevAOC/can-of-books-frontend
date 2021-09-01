@@ -2,7 +2,8 @@ import React from 'react';
 
 import BookCarousel from './BookCarousel';
 import BookList from './BookList';
-import BookFormModal from './BookFormModal';
+import CreateBookModal from './CreateBookModal';
+import UpdateBookModal from './UpdateBookModal';
 import Button from 'react-bootstrap/Button';
 
 import axios from 'axios';
@@ -13,6 +14,7 @@ export default class BestBooks extends React.Component {
     this.state = {
       books: [],
       showModal: false,
+      selectedBook: null,
     };
   }
 
@@ -34,6 +36,24 @@ export default class BestBooks extends React.Component {
       console.error(err);
     }
   };
+
+  updateBook = async (bookObject) => {
+    console.log(bookObject);
+    try {
+      const result = await axios.put(`${process.env.REACT_APP_BACKEND_URL}/books/${bookObject._id}`, bookObject);
+      console.log(result);
+    } catch (err) {
+      console.error(err);
+    }
+  }
+
+  handleUpdateModal = (id) => {
+    const selectedBook = this.state.books.find(book => book._id === id);
+    console.log(selectedBook);
+    this.setState({ selectedBook });
+  }
+
+  closeUpdateModal = () => this.setState({ selectedBook: null });
 
   componentDidMount() {
     this.fetchBooks();
@@ -64,17 +84,23 @@ export default class BestBooks extends React.Component {
         {this.state.books.length ? (
           <>
             <BookCarousel books={this.state.books} />
-            <BookList books={this.state.books} delete={this.deleteBook} />
+            <BookList books={this.state.books} delete={this.deleteBook} update={this.handleUpdateModal} />
           </>
         ) : (
           <h3>No Books Found :(</h3>
         )}
         <Button onClick={this.showBookModal}>Add a book</Button>
-        <BookFormModal
+        <CreateBookModal
           user={this.props.user}
           handleSubmit={this.postBook}
           modal={this.showBookModal}
           show={this.state.showModal}
+        />
+        <UpdateBookModal
+          user={this.props.user}
+          closeModal={this.closeUpdateModal}
+          selected={this.state.selectedBook}
+          update={this.updateBook}
         />
       </>
     );
