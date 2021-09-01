@@ -14,6 +14,9 @@ export default class BookList extends Component {
                     <Card.Title>{book.title}</Card.Title>
                     <Card.Text>{book.description}</Card.Text>
                     {book.status ? <Card.Text>Read</Card.Text> : <Card.Text>Unread</Card.Text>}
+                    <Button variant="primary" onClick={(id) => this.props.update(book._id)}>
+                      Update
+                    </Button>
                     <Button variant="danger" onClick={(id) => this.props.delete(book._id)}>
                       Delete
                     </Button>

@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import { Modal, Button, Form, FloatingLabel } from 'react-bootstrap';
 
-export default class BookFormModal extends Component {
+export default class CreateBookModal extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     this.props.modal();
