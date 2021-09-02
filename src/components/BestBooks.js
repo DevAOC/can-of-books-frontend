@@ -41,18 +41,18 @@ export default class BestBooks extends React.Component {
     console.log(bookObject);
     try {
       const response = await axios.put(`${process.env.REACT_APP_BACKEND_URL}/books/${bookObject._id}`, bookObject);
-      const books = this.state.books.filter(book => book._id !== bookObject._id);
-      this.setState({books: [...books, response.data]});
+      const books = this.state.books.filter((book) => book._id !== bookObject._id);
+      this.setState({ books: [...books, response.data] });
     } catch (err) {
       console.error(err);
     }
-  }
+  };
 
   handleUpdateModal = (id) => {
-    const selectedBook = this.state.books.find(book => book._id === id);
+    const selectedBook = this.state.books.find((book) => book._id === id);
     console.log(selectedBook);
     this.setState({ selectedBook });
-  }
+  };
 
   closeUpdateModal = () => this.setState({ selectedBook: null });
 
@@ -67,8 +67,10 @@ export default class BestBooks extends React.Component {
   };
 
   fetchBooks = async () => {
+    const url = `${process.env.REACT_APP_BACKEND_URL}/books/${this.props.user.email}`;
+    console.log(url);
     try {
-      const books = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/books/${this.props.user.email}`);
+      const books = await axios.get(url);
       this.setState({
         books: books.data,
       });
@@ -82,10 +84,10 @@ export default class BestBooks extends React.Component {
 
     return (
       <>
-        {this.state.books.length && (
-          <BookCarousel books={this.state.books} />
-        )}
-        <Button className="add-btn" onClick={this.showBookModal}>Add a book</Button>
+        {this.state.books.length && <BookCarousel books={this.state.books} />}
+        <Button className="add-btn" onClick={this.showBookModal}>
+          Add a book
+        </Button>
         {this.state.books.length ? (
           <>
             <BookList books={this.state.books} delete={this.deleteBook} update={this.handleUpdateModal} />
