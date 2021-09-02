@@ -67,14 +67,29 @@ export default class BestBooks extends React.Component {
   };
 
   fetchBooks = async () => {
-    try {
-      const books = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/books/${this.props.user.email}`);
-      this.setState({
-        books: books.data,
-      });
-    } catch (err) {
-      console.log(err);
-    }
+    this.props.auth0.getIdTokenClaims()
+      .then(async res => {
+        const jwt = res.__raw;
+
+        const config = {
+          headers: { "Authorization": `Bearer ${jwt}` },
+          baseURL: process.env.REACT_APP_BACKEND_URL,
+          url: '/books',
+          params: { email: this.props.auth0.user.email },
+          method: 'get'
+        }
+        const booksResponse = await axios(config);
+        this.setState({ books: booksResponse.data });
+      })
+      .catch(err => console.error(err));
+    // try {
+    //   const books = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/books/${this.props.user.email}`);
+    //   this.setState({
+    //     books: books.data,
+    //   });
+    // } catch (err) {
+    //   console.log(err);
+    // }
   };
 
   render() {

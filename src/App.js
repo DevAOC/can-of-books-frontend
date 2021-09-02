@@ -7,8 +7,9 @@ import BestBooks from './components/BestBooks';
 import Profile from './components/Profile';
 import Footer from './components/Footer';
 import LoginModal from './components/LoginModal';
+import { withAuth0 } from '@auth0/auth0-react';
 
-export default class App extends React.Component {
+class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -29,26 +30,25 @@ export default class App extends React.Component {
     });
   };
 
-  showLoginModal = () => {
-    this.setState({
-      showModal: this.state.showModal ? false : true,
-    });
-  };
+  // showLoginModal = () => {
+  //   this.setState({
+  //     showModal: this.state.showModal ? false : true,
+  //   });
+  // };
 
   render() {
     return (
       <>
         <Router>
-          <Header user={this.state.user} onLogout={this.logoutHandler} modal={this.showLoginModal} />
-          <LoginModal onLogin={this.loginHandler} modal={this.showLoginModal} show={this.state.showModal} />
+          {/* <Header user={this.state.user} onLogout={this.logoutHandler} modal={this.showLoginModal} /> */}
+          <Header user={this.state.user} onLogout={this.logoutHandler} />
+          {/* <LoginModal onLogin={this.loginHandler} modal={this.showLoginModal} show={this.state.showModal} /> */}
           <Switch>
-            {this.state.user && (
-            <Route exact path="/books">
-              <BestBooks user={this.state.user} />
-            </Route>
-            )}
-            {this.state.user ? (
+            {this.props.auth0.isAuthenticated ? (
               <>
+                <Route exact path="/books">
+                  <BestBooks user={this.state.user} />
+                </Route>
                 <Route exact path="/profile">
                   <Profile profile={this.state.user} />
                 </Route>
@@ -56,7 +56,6 @@ export default class App extends React.Component {
             ) : (
               <Route exact path="/"></Route>
             )}
-            {/* TODO: add a route with a path of '/profile' that renders a `Profile` component */}
           </Switch>
           <Footer />
         </Router>
@@ -64,3 +63,5 @@ export default class App extends React.Component {
     );
   }
 }
+
+export default withAuth0(App);

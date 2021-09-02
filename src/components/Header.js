@@ -1,7 +1,10 @@
 import React from 'react';
-import { Navbar, NavItem, Button } from 'react-bootstrap';
+import { Navbar, NavItem } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import '../Header.css';
+import { withAuth0 } from '@auth0/auth0-react';
+import LoginButton from './LoginButton';
+import LogoutButton from './LogoutButton';
 
 class Header extends React.Component {
   render() {
@@ -13,28 +16,27 @@ class Header extends React.Component {
             Home
           </Link>
         </NavItem>
-        {this.props.user && (
-        <NavItem>
-          <Link to="/books" className="nav-link">
-            View Books
-          </Link>
-        </NavItem>
-        )}
-        {!this.props.user ? (
+        {!this.props.auth0.isAuthenticated ? (
           <>
             <NavItem>
-              <Button onClick={this.props.modal}>Log in</Button>
+              {/* <Button onClick={this.props.modal}>Log in</Button> */}
+              <LoginButton />
             </NavItem>
           </>
         ) : (
           <>
+            <NavItem>
+              <Link to="/books" className="nav-link">
+                View Books
+              </Link>
+            </NavItem>
             <NavItem>
               <Link to="/profile" className="nav-link">
                 Profile
               </Link>
             </NavItem>
             <NavItem>
-              <Button onClick={this.props.onLogout}>Log out</Button>
+              <LogoutButton />
             </NavItem>
           </>
         )}
@@ -43,4 +45,4 @@ class Header extends React.Component {
   }
 }
 
-export default Header;
+export default withAuth0(Header);
