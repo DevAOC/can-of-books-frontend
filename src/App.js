@@ -42,9 +42,11 @@ export default class App extends React.Component {
           <Header user={this.state.user} onLogout={this.logoutHandler} modal={this.showLoginModal} />
           <LoginModal onLogin={this.loginHandler} modal={this.showLoginModal} show={this.state.showModal} />
           <Switch>
+            {this.state.user && (
             <Route exact path="/books">
               <BestBooks user={this.state.user} />
             </Route>
+            )}
             {this.state.user ? (
               <>
                 <Route exact path="/profile">

@@ -40,8 +40,9 @@ export default class BestBooks extends React.Component {
   updateBook = async (bookObject) => {
     console.log(bookObject);
     try {
-      const result = await axios.put(`${process.env.REACT_APP_BACKEND_URL}/books/${bookObject._id}`, bookObject);
-      console.log(result);
+      const response = await axios.put(`${process.env.REACT_APP_BACKEND_URL}/books/${bookObject._id}`, bookObject);
+      const books = this.state.books.filter(book => book._id !== bookObject._id);
+      this.setState({books: [...books, response.data]});
     } catch (err) {
       console.error(err);
     }
@@ -67,7 +68,7 @@ export default class BestBooks extends React.Component {
 
   fetchBooks = async () => {
     try {
-      const books = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/books`);
+      const books = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/books/${this.props.user.email}`);
       this.setState({
         books: books.data,
       });
