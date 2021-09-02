@@ -13,11 +13,13 @@ class Header extends React.Component {
             Home
           </Link>
         </NavItem>
+        {this.props.user && (
         <NavItem>
           <Link to="/books" className="nav-link">
             View Books
           </Link>
         </NavItem>
+        )}
         {!this.props.user ? (
           <>
             <NavItem>
