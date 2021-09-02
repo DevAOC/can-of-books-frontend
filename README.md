@@ -1,7 +1,7 @@
 # Can of Books Frontend
 
 **Author**: Alexander Beers, Anotoine Charette, Ryan Emmans
-**Version**: 1.4.0
+**Version**: 1.5.2
 
 ## Overview
 
@@ -22,6 +22,7 @@ React, Axios
 08-31-2021 2:44pm - Create Book Post modal and form. Send posted books to backend and along with information on user who posted book.
 08-31-2021 4:30pm - Added the ability to have users delete a book from their collection.
 09-01-2021 4:00pm - Added a modal for the user to update or modify an existing book.
+09-01-2021 5:45pm - Add the displaying of books only for the user logged in.
 
 ## Estimates
 
@@ -83,7 +84,7 @@ Start time: 1:30 pm PST
 
 Finish time: 4:00 pm PST
 
-Actual time needed to complete: 2.5hrs
+Actual time needed to complete: 2hr 30m
 
 ## Credit and Collaborations
 
