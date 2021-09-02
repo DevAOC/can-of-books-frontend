@@ -16,11 +16,11 @@ export default class LoginModal extends Component {
         </Modal.Header>
         <Modal.Body>
           <Form onSubmit={this.handleSubmit}>
-            <FloatingLabel controlId="floatingInput" label="Username">
-              <Form.Control type="text" placeholder="Text" name="username" required />
+            <FloatingLabel  controlId="floatingInput" label="Username">
+              <Form.Control className="mb-3" type="text" placeholder="Text" name="username" required />
             </FloatingLabel>
             <FloatingLabel controlId="floatingInput" label="Email address" className="mb-3">
-              <Form.Control type="email" placeholder="name@example.com" name="email" required />
+              <Form.Control className="mb-3" type="email" placeholder="name@example.com" name="email" required />
             </FloatingLabel>
             <Button type="submit">Log in</Button>
           </Form>

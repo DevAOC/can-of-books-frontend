@@ -1,0 +1,31 @@
+.carousel-img {
+  width: 100vh !important;
+  height: 50vh !important;
+  object-fit: cover;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  /* object-position: 50% 0% */
+}
+
+.add-btn {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.carousel-background {
+  background-color: #333333;
+}
+
+.carousel-title {
+  font-size: 2rem;
+  text-shadow: 3px 3px 1px black;
+}
+
+.carousel-description {
+  font-size: 1rem;
+  text-shadow: 2px 2px 1px black;
+}

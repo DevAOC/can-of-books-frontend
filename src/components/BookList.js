@@ -9,12 +9,12 @@ export default class BookList extends Component {
           <CardGroup style={{ justifyContent: 'center' }}>
             {this.props.books.map((book) => {
               return (
-                <Card key={book._id} style={{ minWidth: '18rem' }}>
+                <Card className="mb-3" border="dark" key={book._id} style={{ minWidth: '18rem' }}>
                   <Card.Body>
-                    <Card.Title>{book.title}</Card.Title>
-                    <Card.Text>{book.description}</Card.Text>
-                    {book.status ? <Card.Text>Read</Card.Text> : <Card.Text>Unread</Card.Text>}
-                    <Button variant="primary" onClick={(id) => this.props.update(book._id)}>
+                    <Card.Title className="m-1">{book.title}</Card.Title>
+                    <Card.Text className="m-1">{book.description}</Card.Text>
+                    {book.status ? <Card.Text className="m-1">Read</Card.Text> : <Card.Text>Unread</Card.Text>}
+                    <Button className="m-1" variant="primary" onClick={(id) => this.props.update(book._id)}>
                       Update
                     </Button>
                     <Button variant="danger" onClick={(id) => this.props.delete(book._id)}>

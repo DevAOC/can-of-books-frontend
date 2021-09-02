@@ -26,7 +26,7 @@ export default class CreateBookModal extends Component {
             <Modal.Body>
               <Form onSubmit={this.handleSubmit}>
                 <FloatingLabel controlId="floatingInput" label="Title">
-                  <Form.Control type="text" placeholder="Enter title of book" name="title" required />
+                  <Form.Control className="mb-3" type="text" placeholder="Enter title of book" name="title" required />
                 </FloatingLabel>
                 <FloatingLabel className="mb-3" controlId="floatingInput" label="Description">
                   <Form.Control type="text" placeholder="Enter a description for this book" name="description" required />

@@ -82,15 +82,17 @@ export default class BestBooks extends React.Component {
 
     return (
       <>
+        {this.state.books.length && (
+          <BookCarousel books={this.state.books} />
+        )}
+        <Button className="add-btn" onClick={this.showBookModal}>Add a book</Button>
         {this.state.books.length ? (
           <>
-            <BookCarousel books={this.state.books} />
             <BookList books={this.state.books} delete={this.deleteBook} update={this.handleUpdateModal} />
           </>
         ) : (
           <h3>No Books Found :(</h3>
         )}
-        <Button onClick={this.showBookModal}>Add a book</Button>
         <CreateBookModal
           user={this.props.user}
           handleSubmit={this.postBook}

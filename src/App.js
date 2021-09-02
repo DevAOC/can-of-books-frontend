@@ -6,7 +6,7 @@ import Header from './components/Header';
 import BestBooks from './components/BestBooks';
 import Profile from './components/Profile';
 import Footer from './components/Footer';
-import LoginModal from './components/loginModal';
+import LoginModal from './components/LoginModal';
 
 export default class App extends React.Component {
   constructor(props) {

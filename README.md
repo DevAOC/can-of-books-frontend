@@ -1,11 +1,11 @@
 # Can of Books Frontend
 
 **Author**: Alexander Beers, Anotoine Charette, Ryan Emmans
-**Version**: 1.5.2
+**Version**: 1.5.3
 
 ## Overview
 
-Books are life-changing. They have the power to enlighten, educate, entertain, heal, and help us grow. This app is used to track what books have impacted the user, and what's recommended to read next.
+Books are life-changing. They have the power to enlighten, educate, entertain, heal, and help us grow. This app is used to track what books have impacted the user in an organized matter.
 
 ## Getting Started
 
@@ -13,16 +13,17 @@ Books are life-changing. They have the power to enlighten, educate, entertain, h
 
 ## Architecture
 
-React, Axios
+React, Axios, Unsplash API
 
 ## Change Log
 
-08-30-2021 6:00pm - Add rendering of books retrieved from the backend in a carousel.
-08-30-2021 9:00pm - Create login modal and form. Create a profile component that takes data from a login attempt.
-08-31-2021 2:44pm - Create Book Post modal and form. Send posted books to backend and along with information on user who posted book.
-08-31-2021 4:30pm - Added the ability to have users delete a book from their collection.
-09-01-2021 4:00pm - Added a modal for the user to update or modify an existing book.
-09-01-2021 5:45pm - Add the displaying of books only for the user logged in.
+08-30-2021 6:00pm - Add rendering of books retrieved from the backend in a carousel
+08-30-2021 9:00pm - Create login modal and form. Create a profile component that takes data from a login attempt
+08-31-2021 2:44pm - Create Book Post modal and form. Send posted books to backend and along with information on user who posted book
+08-31-2021 4:30pm - Added the ability to have users delete a book from their collection
+09-01-2021 4:00pm - Added a modal for the user to update or modify an existing book
+09-01-2021 5:45pm - Add the displaying of books only for the user logged in
+09-01-2021 8:00pm - Add the displaying of images for books from Unsplash API based off of their title
 
 ## Estimates
 
@@ -85,6 +86,16 @@ Start time: 1:30 pm PST
 Finish time: 4:00 pm PST
 
 Actual time needed to complete: 2hr 30m
+
+Name of feature: Display images from books based on title
+
+Estimate of time needed to complete: 1hrs
+
+Start time: 7:00 pm PST
+
+Finish time: 8:00 pm PST
+
+Actual time needed to complete: 1hr
 
 ## Credit and Collaborations
 
