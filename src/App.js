@@ -45,8 +45,8 @@ class App extends React.Component {
               <Route exact path="/">
                 <Card className="mb-3 homeCard" style={{ Width: '65%' }}>
                   <Card.Body>
-                    <Card.Title className="m-1"><h1>Welcome to Can Of Books</h1></Card.Title>
-                    <Card.Text className="m-1"><h2>Description here</h2></Card.Text>
+                    <Card.Title className="m-1"><h1 className="h1">Welcome to Can Of Books</h1></Card.Title>
+                    <Card.Text className="m-1"><h2>Books are life-changing. They have the power to enlighten, educate, entertain, heal, and help us grow. This app is used to track what books have impacted the user in an organized matter.</h2></Card.Text>
                   </Card.Body>
                 </Card>
               </Route>
