@@ -1,3 +1,76 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 50px;
+  /* box-shadow: 0px 2px 2px black !important; */
+}
+
+.navItem {
+  font-size: 1.3em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.nav-link {
+  color: white;
+}
+
+body {
+  background-image: url('./assets/library.jpg');
+  background-size: cover;
+}
+
+.h1 {
+  font-family: 'Roboto Slab', serif;
+  font-size: 3em;
+}
+
+.homeCard {
+  z-index: 1000 !important;
+  text-align: center;
+  margin: 100px auto;
+  opacity: 80%;
+  width: 70%;
+  padding: 30px;
+}
+
+.footerSpacer {
+  margin: 120px auto;
+}
+
+.footer {
+  padding: 0px 50px;
+}
+
+/* .home {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  background-color: white;
+  opacity: 80%;
+  width: 60%;
+  max-width: 640px;
+  height: 50%;
+  max-height: 300px;
+  vertical-align: middle;
+  border-radius: 4px;
+  box-shadow: 0px 0px 5px black;
+  padding: 40px;
+}
+
+.home h2 {
+  font-size: 2.6em;
+  margin: 0px;
+  text-transform: uppercase;
+}
+
+.home h3 {
+  font-size: 1.8em;
+  margin: 0px 0px 10px 0px;
+  line-height: 1.3em;
+  color: black;
+} */
+
 .carousel-img {
   width: 100vh !important;
   height: 50vh !important;

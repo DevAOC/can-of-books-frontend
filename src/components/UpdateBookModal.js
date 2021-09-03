@@ -27,7 +27,12 @@ class UpdateBookModal extends Component {
           <Modal.Body>
             <Form onSubmit={this.handleSubmit}>
               <FloatingLabel controlId="floatingInput" label="Update Title">
-                <Form.Control type="text" defaultValue={this.props.selected.title} name="title" required />
+                <Form.Control
+                className="mb-2"
+                type="text"
+                defaultValue={this.props.selected.title}
+                name="title"
+                required />
               </FloatingLabel>
               <FloatingLabel className="mb-3" controlId="floatingInput" label="Update Description">
                 <Form.Control

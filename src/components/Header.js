@@ -1,7 +1,6 @@
 import React from 'react';
 import { Navbar, NavItem } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import '../Header.css';
 import { withAuth0 } from '@auth0/auth0-react';
 import LoginButton from './LoginButton';
 import LogoutButton from './LogoutButton';
@@ -9,9 +8,9 @@ import LogoutButton from './LogoutButton';
 class Header extends React.Component {
   render() {
     return (
-      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-        <Navbar.Brand>My Favorite Books</Navbar.Brand>
-        <NavItem>
+      <Navbar className="header" collapseOnSelect expand="lg" bg="dark" variant="dark">
+        <Navbar.Brand className="m-3"><h1 className="h1">Can Of Books</h1></Navbar.Brand>
+        <NavItem className="navItem">
           <Link to="/" className="nav-link">
             Home
           </Link>
@@ -24,12 +23,12 @@ class Header extends React.Component {
           </>
         ) : (
           <>
-            <NavItem>
+            <NavItem className="navItem">
               <Link to="/books" className="nav-link">
                 View Books
               </Link>
             </NavItem>
-            <NavItem>
+            <NavItem className="navItem">
               <Link to="/profile" className="nav-link">
                 Profile
               </Link>

@@ -1,11 +1,13 @@
 # Can of Books Frontend
 
 **Author**: Alexander Beers, Anotoine Charette, Ryan Emmans
-**Version**: 1.5.3
+**Version**: 2.0.3
 
 ## Overview
 
 Books are life-changing. They have the power to enlighten, educate, entertain, heal, and help us grow. This app is used to track what books have impacted the user in an organized matter.
+
+- - -
 
 ## Getting Started
 
@@ -18,84 +20,91 @@ React, Axios, Unsplash API
 ## Change Log
 
 08-30-2021 6:00pm - Add rendering of books retrieved from the backend in a carousel
+
 08-30-2021 9:00pm - Create login modal and form. Create a profile component that takes data from a login attempt
+
 08-31-2021 2:44pm - Create Book Post modal and form. Send posted books to backend and along with information on user who posted book
+
 08-31-2021 4:30pm - Added the ability to have users delete a book from their collection
+
 09-01-2021 4:00pm - Added a modal for the user to update or modify an existing book
+
 09-01-2021 5:45pm - Add the displaying of books only for the user logged in
+
 09-01-2021 8:00pm - Add the displaying of images for books from Unsplash API based off of their title
+
+09-02-2021 4:00pm - Adds Auth0.
+
+09-02-2021 10:00pm - Adds styling
+
+- - -
 
 ## Estimates
 
-Name of feature: Display all Book to user
+### Name of feature: Display all Book to user
 
-Estimate of time needed to complete: 2hr
+- Estimate of time needed to complete: 2hr
+- Start time: 3:00
+- Finish time: 6:00
+- Actual time needed to complete: 3hr
 
-Start time: 3:00
+### Name of feature: Allow user to login in with credentials and siplay it on a profile page and add routing(partially implemented)
 
-Finish time: 6:00
+- Estimate of time needed to complete: 2hr
+- Start time: 6:00
+- Finish time: 9:00
+- Actual time needed to complete: 3hr
 
-Actual time needed to complete: 3hr
+### Name of feature: Allow user to login in with credentials and siplay it on a profile page and add routing(partially implemented)
 
-Name of feature: Allow user to login in with credentials and siplay it on a profile page and add routing(partially implemented)
+- Estimate of time needed to complete: 2hr
+- Start time: 6:00
+- Finish time: 9:00
+- Actual time needed to complete: 3hr
 
-Estimate of time needed to complete: 2hr
+### Name of feature: Allow user to posts new books to the server, and render the results
 
-Start time: 6:00
+- Estimate of time needed to complete: 2hr
+- Start time: 6:00
+- Finish time: 9:00
+- Actual time needed to complete: 3hr
 
-Finish time: 9:00
+### Name of feature: Allows user to delete books from the book array/list
 
-Actual time needed to complete: 3hr
+- Estimate of time needed to complete: 30mins
+- Start time: 3:00 pm PST
+- Finish time: 3:45 pm PST
+- Actual time needed to complete: 45 mins
 
-Name of feature: Allow user to login in with credentials and siplay it on a profile page and add routing(partially implemented)
+### Name of feature: Allows user to update books from the book array/list
 
-Estimate of time needed to complete: 2hr
+- Estimate of time needed to complete: 2hrs
+- Start time: 1:30 pm PST
+- Finish time: 4:00 pm PST
+- Actual time needed to complete: 2hr 30m
 
-Start time: 6:00
+### Name of feature: Display images from books based on title
 
-Finish time: 9:00
+- Estimate of time needed to complete: 1hrs
+- Start time: 7:00 pm PST
+- Finish time: 8:00 pm PST
+- Actual time needed to complete: 1hr
 
-Actual time needed to complete: 3hr
+### Name of feature: Auth0
 
-Name of feature: Allow user to posts new books to the server, and render the results
+- Estimate of time needed to complete: 4hrs
+- Start time: 2:00 pm PST
+- Finish time: 7:00 pm PST
+- Actual time needed to complete: 5hrs
 
-Estimate of time needed to complete: 2hr
+### Name of feature: Styling
 
-Start time: 6:00
+- Estimate of time needed to complete: 2hrs
+- Start time: 8:00 pm PST
+- Finish time: 10:00 pm PST
+- Actual time needed to complete: 2hrs
 
-Finish time: 9:00
-
-Actual time needed to complete: 3hr
-
-Name of feature: Allows user to delete books from the book array/list
-
-Estimate of time needed to complete: 30mins
-
-Start time: 3:00 pm PST
-
-Finish time: 3:45 pm PST
-
-Actual time needed to complete: 45 mins
-
-Name of feature: Allows user to update books from the book array/list
-
-Estimate of time needed to complete: 2hrs
-
-Start time: 1:30 pm PST
-
-Finish time: 4:00 pm PST
-
-Actual time needed to complete: 2hr 30m
-
-Name of feature: Display images from books based on title
-
-Estimate of time needed to complete: 1hrs
-
-Start time: 7:00 pm PST
-
-Finish time: 8:00 pm PST
-
-Actual time needed to complete: 1hr
+- - -
 
 ## Credit and Collaborations
 
@@ -149,4 +158,4 @@ Actual time needed to complete: 1hr
 
 - How will you approach each other and the challenge of building an application knowing that it is impossible for two people to be at the exact same place in understanding and skill level?
 
-Engage in jolly cooperation and explain the code from each contribution that every member has made
+- Engage in jolly cooperation and explain the code from each contribution that every member has made
