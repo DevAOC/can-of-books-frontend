@@ -13,7 +13,11 @@ export default class BookList extends Component {
                   <Card.Body>
                     <Card.Title className="m-1">{book.title}</Card.Title>
                     <Card.Text className="m-1">{book.description}</Card.Text>
-                    {book.status ? <Card.Text className="m-1">Read</Card.Text> : <Card.Text>Unread</Card.Text>}
+                    {book.status === 'true' ? (
+                      <Card.Text className="m-1">Read</Card.Text>
+                    ) : (
+                      <Card.Text>Unread</Card.Text>
+                    )}
                     <Button className="m-1" variant="primary" onClick={(id) => this.props.update(book._id)}>
                       Update
                     </Button>
