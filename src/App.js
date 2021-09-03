@@ -7,55 +7,37 @@ import BestBooks from './components/BestBooks';
 import Profile from './components/Profile';
 import Footer from './components/Footer';
 import { withAuth0 } from '@auth0/auth0-react';
+import { Container } from 'react-bootstrap';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      user: null,
       showModal: false,
     };
   }
-
-  loginHandler = (user) => {
-    this.setState({
-      user: { name: user.target.username.value, email: user.target.email.value },
-    });
-  };
-
-  logoutHandler = () => {
-    this.setState({
-      user: null,
-    });
-  };
-
-  // showLoginModal = () => {
-  //   this.setState({
-  //     showModal: this.state.showModal ? false : true,
-  //   });
-  // };
 
   render() {
     return (
       <>
         <Router>
-          {/* <Header user={this.state.user} onLogout={this.logoutHandler} modal={this.showLoginModal} /> */}
-          <Header user={this.state.user} onLogout={this.logoutHandler} />
-          {/* <LoginModal onLogin={this.loginHandler} modal={this.showLoginModal} show={this.state.showModal} /> */}
-          <Switch>
-            {this.props.auth0.isAuthenticated ? (
-              <>
-                <Route exact path="/books">
-                  <BestBooks user={this.state.user} />
-                </Route>
-                <Route exact path="/profile">
-                  <Profile profile={this.state.user} />
-                </Route>
-              </>
-            ) : (
-              <Route exact path="/"></Route>
-            )}
-          </Switch>
+          <Header />
+          <Container>
+            <Switch>
+              {this.props.auth0.isAuthenticated ? (
+                <>
+                  <Route exact path="/books">
+                    <BestBooks user={this.state.user} />
+                  </Route>
+                  <Route exact path="/profile">
+                    <Profile id="profile" profile={this.state.user} />
+                  </Route>
+                </>
+              ) : (
+                <Route exact path="/"></Route>
+              )}
+            </Switch>
+          </Container>
           <Footer />
         </Router>
       </>

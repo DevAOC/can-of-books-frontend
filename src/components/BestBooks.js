@@ -66,7 +66,6 @@ class BestBooks extends React.Component {
   };
 
   updateBook = async (updatedBook) => {
-    console.log(updatedBook);
     this.props.auth0.getIdTokenClaims().then(async (res) => {
       const jwt = res.__raw;
 
@@ -87,18 +86,10 @@ class BestBooks extends React.Component {
       const books = this.state.books.filter((book) => book._id !== updatedBook._id);
       this.setState({ books: [...books, response.data] });
     });
-    // try {
-    //   const response = await axios.put(`${process.env.REACT_APP_BACKEND_URL}/books/${updatedBook._id}`, bookObject);
-    //   const books = this.state.books.filter((book) => book._id !== bookObject._id);
-    //   this.setState({ books: [...books, response.data] });
-    // } catch (err) {
-    //   console.error(err);
-    // }
   };
 
   handleUpdateModal = (id) => {
     const selectedBook = this.state.books.find((book) => book._id === id);
-    console.log(selectedBook);
     this.setState({ selectedBook });
   };
 
@@ -129,17 +120,8 @@ class BestBooks extends React.Component {
         };
         const booksResponse = await axios(config);
         this.setState({ books: booksResponse.data });
-        console.log(booksResponse);
       })
       .catch((err) => console.error(err));
-    // try {
-    //   const books = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/books/${this.props.user.email}`);
-    //   this.setState({
-    //     books: books.data,
-    //   });
-    // } catch (err) {
-    //   console.log(err);
-    // }
   };
 
   render() {

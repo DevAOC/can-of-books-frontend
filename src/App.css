@@ -8,6 +8,26 @@
   /* object-position: 50% 0% */
 }
 
+#profile-img {
+  width: 250px;
+  border-radius: 50%;
+}
+
+#profile-card {
+  width: 600px;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  margin-top: 25px;
+}
+
+#profile {
+  /* margin-left: 500px !important; */
+  /* display: block; */
+  /* margin-left: auto;
+  margin-right: auto; */
+}
+
 .add-btn {
   display: block;
   margin-left: auto;

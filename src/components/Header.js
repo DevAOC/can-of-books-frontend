@@ -19,7 +19,6 @@ class Header extends React.Component {
         {!this.props.auth0.isAuthenticated ? (
           <>
             <NavItem>
-              {/* <Button onClick={this.props.modal}>Log in</Button> */}
               <LoginButton />
             </NavItem>
           </>

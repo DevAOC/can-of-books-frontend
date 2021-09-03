@@ -41,7 +41,7 @@ class UpdateBookModal extends Component {
               <Form.Group className="mb-3" controlId="formBasicCheckbox">
                 <Form.Check
                   name="read"
-                  defaultChecked={this.props.selected.read}
+                  defaultChecked={this.props.selected.status === 'true'}
                   type="checkbox"
                   label="Book has been read"
                 />
