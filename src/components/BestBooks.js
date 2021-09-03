@@ -19,7 +19,22 @@ class BestBooks extends React.Component {
     };
   }
 
+  getPhoto = async (book) => {
+    let photo;
+    let result = await axios.get(
+      `https://api.unsplash.com/search/photos?client_id=${process.env.REACT_APP_UNSPLASH_KEY}&query=${book.title}`
+    );
+    if (result.data.results[0] === undefined) {
+      photo =
+        'https://images.unsplash.com/photo-1521714161819-15534968fc5f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1350&q=80';
+    } else {
+      photo = result.data.results[0].urls.raw;
+    }
+    return photo;
+  };
+
   postBook = async (newBook) => {
+    const photo = await this.getPhoto(newBook);
     this.props.auth0
       .getIdTokenClaims()
       .then(async (res) => {
@@ -32,6 +47,7 @@ class BestBooks extends React.Component {
             title: newBook.title,
             description: newBook.description,
             status: newBook.status,
+            photo: photo,
           },
           baseURL: process.env.REACT_APP_BACKEND_URL,
           url: '/books',
@@ -66,6 +82,7 @@ class BestBooks extends React.Component {
   };
 
   updateBook = async (updatedBook) => {
+    const photo = await this.getPhoto(updatedBook);
     this.props.auth0.getIdTokenClaims().then(async (res) => {
       const jwt = res.__raw;
 
@@ -76,6 +93,7 @@ class BestBooks extends React.Component {
           title: updatedBook.title,
           description: updatedBook.description,
           status: updatedBook.status,
+          photo: photo,
         },
         method: 'put',
         baseURL: process.env.REACT_APP_BACKEND_URL,

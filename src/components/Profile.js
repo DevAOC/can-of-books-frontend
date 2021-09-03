@@ -8,13 +8,13 @@ class Profile extends Component {
   }
   render() {
     return (
-      <Card id="profile-card">
-        <Card.Header>User Info</Card.Header>
+      <Card border="dark" id="profile-card">
+        <Card.Header style={{ fontSize: '2rem' }}>User Info</Card.Header>
         <Card.Img id="profile-img" variant="top" src={this.props.auth0.user.picture} alt="user" />
         <Card.Body>
-          <Card.Title>{this.props.auth0.user.name}</Card.Title>
-          <Card.Text>{this.props.auth0.user.email}</Card.Text>
+          <Card.Title id="profile-body">{this.props.auth0.user.name}</Card.Title>
         </Card.Body>
+        <Card.Footer className="text-muted">{this.props.auth0.user.email}</Card.Footer>
       </Card>
     );
   }
