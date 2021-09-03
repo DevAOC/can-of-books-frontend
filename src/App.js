@@ -7,7 +7,7 @@ import BestBooks from './components/BestBooks';
 import Profile from './components/Profile';
 import Footer from './components/Footer';
 import { withAuth0 } from '@auth0/auth0-react';
-import { Container } from 'react-bootstrap';
+import { Container, Card } from 'react-bootstrap';
 
 class App extends React.Component {
   constructor(props) {
@@ -24,8 +24,16 @@ class App extends React.Component {
           <Header />
           <Container>
             <Switch>
-              {this.props.auth0.isAuthenticated ? (
+              {this.props.auth0.isAuthenticated && (
                 <>
+                  <Route exact path="/">
+                    <Card className="mb-3 homeCard">
+                      <Card.Body>
+                        <Card.Title className="m-1"><h1 className="h1">Welcome to Can Of Books</h1></Card.Title>
+                        <Card.Text className="m-1"><h2>Books are life-changing. They have the power to enlighten, educate, entertain, heal, and help us grow. This app is used to track what books have impacted the user in an organized matter.</h2></Card.Text>
+                      </Card.Body>
+                    </Card>
+                  </Route>
                   <Route exact path="/books">
                     <BestBooks user={this.state.user} />
                   </Route>
@@ -33,13 +41,20 @@ class App extends React.Component {
                     <Profile id="profile" profile={this.state.user} />
                   </Route>
                 </>
-              ) : (
-                <Route exact path="/"></Route>
               )}
+              <Route exact path="/">
+                <Card className="mb-3 homeCard" style={{ Width: '65%' }}>
+                  <Card.Body>
+                    <Card.Title className="m-1"><h1>Welcome to Can Of Books</h1></Card.Title>
+                    <Card.Text className="m-1"><h2>Description here</h2></Card.Text>
+                  </Card.Body>
+                </Card>
+              </Route>
             </Switch>
           </Container>
           <Footer />
         </Router>
+        <div className="footerSpacer"></div>
       </>
     );
   }
