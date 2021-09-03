@@ -9,8 +9,8 @@ class Profile extends Component {
       <Card>
         <Card.Header>User Info</Card.Header>
         <Card.Body>
-          <Card.Title>{this.props.profile.name}</Card.Title>
-          <Card.Text>{this.props.profile.email}</Card.Text>
+          <Card.Title>Botato Botata</Card.Title>
+          <Card.Text>EMAIL SOON</Card.Text>
         </Card.Body>
       </Card>
     );
