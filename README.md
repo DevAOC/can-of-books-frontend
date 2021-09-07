@@ -1,7 +1,10 @@
 # Can of Books Frontend
 
 **Author**: Alexander Beers, Anotoine Charette, Ryan Emmans
+
 **Version**: 2.0.3
+
+*** Site Deployed on Netlify [here](https://can-of-books-frontend-supreme.netlify.app/)
 
 ## Overview
 
